@@ -3,21 +3,13 @@ import ExpenseItem from "./ExpenseItem";
 function Expenses(prop){
     return(
     <div>
-        <ExpenseItem 
-            title = {prop.expenses[0].title}
-            amount = {prop.expenses[0].amount}
-            date = { prop.expenses[0].date } >
-        </ExpenseItem>
-        <ExpenseItem 
-            title = {prop.expenses[1].title}
-            amount = {prop.expenses[1].amount}
-            date = { prop.expenses[1].date } >
-        </ExpenseItem>
-        <ExpenseItem 
-            title = {prop.expenses[2].title}
-            amount = {prop.expenses[2].amount}
-            date = { prop.expenses[2].date } >
-        </ExpenseItem>
+        { prop.expenses.map((expense) => (
+            <ExpenseItem 
+                title = {expense.title}
+                amount = {expense.amount}
+                date = { expense.date } >
+            </ExpenseItem>
+        ))}
     </div>);
 }
 
