@@ -1,8 +1,9 @@
 import ExpenseItem from "./ExpenseItem";
+import './Expenses.css'
 
 function Expenses(prop){
     return(
-    <div>
+    <div className="expenses">
         { prop.expenses.map((expense) => (
             <ExpenseItem 
                 title = {expense.title}
