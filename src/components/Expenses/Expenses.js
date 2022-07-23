@@ -6,7 +6,9 @@ import './Expenses.css'
 function Expenses(prop){
     return(
     <Card className="expenses">
+        
         { prop.expenses.map((expense) => (
+
             <ExpenseItem 
                 title = {expense.title}
                 amount = {expense.amount}
