@@ -1,15 +1,11 @@
 import "./Form.css"
 import React , {useState} from 'react';
 
-const Form = () => {
+const Form = (props) => {
     const [enteredTitle,setTitle] = useState('');
     const [enteredAmount,setAmount] = useState('');
     const [enteredDate,setDate] = useState('');
-    // const [userInput,setUserInput] = useState({
-    //     EnteredTitle: '',
-    //     EnteredAmount: '',
-    //     EnteredDate:''
-    // });
+    
 
     const titleChangeHandler = (event) => {
         setTitle(event.target.value);
@@ -28,7 +24,7 @@ const Form = () => {
             amount: enteredAmount,
             date: enteredDate
         }
-        console.log(expenseData)
+        props.onSave(expenseData);
         setTitle("")
         setAmount("")
         setDate("")
